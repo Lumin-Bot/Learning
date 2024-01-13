@@ -21,3 +21,21 @@ document.body gives you the body
 document.documentElement gives the html elements 
 */
 
+const divWithId = document.getElementById("div-id")
+divWithId.style.color = "red"
+// id is unique
+// prints null if not found
+
+const divWithClass = document.getElementsByClassName("div-class")
+console.log(divWithClass)
+// this prints out a html collection of all the div-class 's 
+// html collection is almost like an array, but not really
+// prints empty html collection if not found
+
+const divWithClassArray = Array.from(divWithClass)
+divWithClassArray.forEach(div => div.style.color = "green")
+// change html collection to array to use forEach 
+// forEach div change color to green
+
+divWithClass[0].style.color = "black"
+// changes the color of the individual element in the html collection to black
