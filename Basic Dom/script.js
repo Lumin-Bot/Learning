@@ -21,6 +21,7 @@ document.body gives you the body
 document.documentElement gives the html elements 
 */
 
+/*
 const divWithId = document.getElementById("div-id")
 divWithId.style.color = "red"
 // id is unique
@@ -39,3 +40,17 @@ divWithClassArray.forEach(div => div.style.color = "green")
 
 divWithClass[0].style.color = "black"
 // changes the color of the individual element in the html collection to black
+*/ 
+
+const dataAttributeElement = document.querySelector("[data-test]")
+const divWithClasses = document.querySelectorAll(".div-class")
+const input = document.querySelector("input")
+
+console.log(input)
+
+// querySelector outputs the first individual element
+// querySelectorAll outputs all the matching elements in a NodeList
+
+divWithClasses.forEach(div => (div.style.color = "red"))
+
+// NodeList has forEach function 
