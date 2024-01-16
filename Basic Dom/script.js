@@ -114,3 +114,61 @@ btn.addEventListener("click", function(e){
 // use arrow function 
 // not use this instead use e.target
 */ 
+
+/* 
+const test = document.querySelector("[data-test]")
+test.dataset.test = "5555" 
+*/
+
+// key value pairs
+
+/* 
+const buttons = document.querySelectorAll("button")
+
+buttons.forEach(button =>{
+    button.addEventListener("click", event =>{
+        const currentClicks = parseInt(button.dataset.clicks)
+        
+        button.dataset.clicks = currentClicks + 1
+    })
+}) 
+*/
+
+// Everytime you click the button the number gets saved in the data attribute
+
+
+/* 
+const grandParent = document.querySelector("#grandparent")
+const parentOne = grandParent.children[0]
+const parentTwo = parentOne.nextElementSibling
+const childOne = parentOne.children[0]
+const childTwo = parentOne.children[1]
+
+grandParent.style.color = "red"
+parentOne.style.color = "green"
+parentTwo.style.color = "orange"
+ */
+
+// .children will print a HTML collection of the whatever is inside it
+
+/* 
+const childOne = document.querySelector("#child-one")
+const parentOne = childOne.parentElement
+const grandParent = childOne.closest(".grand-parent")
+
+childOne.style.color = "red"
+parentOne.style.color = "green"
+grandParent.style.color = "red"
+ */
+
+// .parentElement will give the parent of the current element
+// .closest(class or id) will give the closest class or id to the current element 
+
+/* 
+const grandParent = document.querySelector("#grand-parent")
+const children = document.querySelectorAll(".child")
+
+children.forEach(child => child.style.color = "brown") 
+*/
+
+// 
