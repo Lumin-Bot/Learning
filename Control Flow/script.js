@@ -22,7 +22,7 @@ if(array.length == 0){
 
 // Ternary Operator
 
-const isUserLoggedIn = true
+// const isUserLoggedIn = true
 
 /* 
 if(isUserLoggedIn){
@@ -36,6 +36,58 @@ isUserLoggedIn ? console.log("logged in") : console.log("not logged in")
 // condition ? if it mets that condition : else condition 
 
 
-const welcomeMessage = isUserLoggedIn ? console.log("Welcome") : console.log("Please Log In")
+// const welcomeMessage = isUserLoggedIn ? console.log("Welcome") : console.log("Please Log In")
+
+/* 
+const favAnimal = "cat"
+
+if(favAnimal === "cat"){
+    console.log("cats are pretty cool")
+} else if(favAnimal === "dog"){
+    console.log("they are kinda loud")
+} else if(favAnimal === "shark"){
+    console.log("that is kinda interesting")
+} else{
+    console.log("that is cool, but idk that animal")
+}
+
+switch(favAnimal){
+    case "cat":
+        console.log("cats are pretty cool")
+        console.log("another log")
+        break
+    case "dog":
+        console.log("they are kinda laoud")
+} 
+*/
+
+const number = 5
+
+// Create a swicth that checks to see the value of the number var
+// If the number is 0 print "it is zero"
+// If the number is 1 or 2 print "it is small"
+// If the number is 3 or 4 print "it is medium"
+// If the number is 5 print "it is large"
+// If the number is none of these print "try again"
 
 
+/* 
+switch(number){
+    case 0:
+        console.log("it is zero")
+        break
+    case 1:
+    case 2:
+        console.log("it is small")
+        break
+    case 3:
+    case 4:
+        console.log("it is medium")
+        break
+    case 5:
+        console.log("it is large")
+        break
+    default:
+        console.log("try again")
+} 
+*/
