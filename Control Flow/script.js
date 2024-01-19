@@ -61,7 +61,7 @@ switch(favAnimal){
 } 
 */
 
-const number = 5
+// const number = 5
 
 // Create a swicth that checks to see the value of the number var
 // If the number is 0 print "it is zero"
@@ -91,3 +91,26 @@ switch(number){
         console.log("try again")
 } 
 */
+
+/* 
+for (let i = 0; i < 5; i++){
+    console.log("hi")
+} 
+*/
+
+// for loop:
+// a variable for starting 
+// an ending point
+// how to modify our variable
+
+
+// Create a for loop that loops from 0 to 10 and prints all values from 0 to 10
+// Modify this loop and exit the loop when the value is equal to 5 by using break
+
+for(let i = 0; i <= 10; i++){
+    
+    if(i == 5){
+        break
+    }
+    console.log(i)
+}
