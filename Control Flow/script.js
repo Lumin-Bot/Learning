@@ -107,10 +107,28 @@ for (let i = 0; i < 5; i++){
 // Create a for loop that loops from 0 to 10 and prints all values from 0 to 10
 // Modify this loop and exit the loop when the value is equal to 5 by using break
 
+/* 
 for(let i = 0; i <= 10; i++){
     
     if(i == 5){
         break
     }
     console.log(i)
+} 
+*/
+
+const person = {
+    name: "Jacky",
+    friend: {
+        name: "Kyle",
+        friend: {
+            name: "Sally"
+        }
+    }
+}
+
+let currentPerson = person
+while(currentPerson.friend != null){
+    console.log(currentPerson.name)
+    currentPerson = currentPerson.friend
 }
