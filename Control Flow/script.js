@@ -117,7 +117,7 @@ for(let i = 0; i <= 10; i++){
 } 
 */
 
-const person = {
+/* const person = {
     name: "Jacky",
     friend: {
         name: "Kyle",
@@ -131,4 +131,77 @@ let currentPerson = person
 while(currentPerson.friend != null){
     console.log(currentPerson.name)
     currentPerson = currentPerson.friend
+} */
+
+/* function printHi(){
+    // console.log("hi")
+    printHi()
 }
+
+printHi() */
+
+// recursion: loop in function 
+
+/* 
+for (let i = 1; i <= 10; i++){
+    console.log(i)
+} 
+
+
+function printNum(num){
+    if(num > 10) return 
+    console.log(num)
+    printNum(num + 1)
+}
+
+printNum(1)
+*/
+
+/* 
+let sum = 0
+
+
+for (let i = 1; i<= 10; i++){
+    sum = sum + i
+}
+
+console.log(sum) 
+
+
+function sumNumBelow(num){
+    if(num <= 0) return 0
+    return num + sumNumBelow(num - 1)
+}
+
+console.log(sumNumBelow(10)) 
+*/
+
+const person = {
+    name: "Kyle",
+    friend: {
+        name: "Joe",
+        friend: {
+            name: "Sally"
+        }
+    }
+}
+
+let currentPerson = person
+
+/* 
+while(currentPerson != null){
+    console.log(currentPerson.name)
+    currentPerson = currentPerson.friend
+} 
+*/
+
+
+function friendName(present){
+
+    if(present == null) return
+    console.log(present.name)
+    friendName(present.friend)
+    
+}
+
+friendName(person)
