@@ -157,6 +157,9 @@ function printNum(num){
 printNum(1)
 */
 
+
+
+// Recursion 
 /* 
 let sum = 0
 
@@ -176,6 +179,7 @@ function sumNumBelow(num){
 console.log(sumNumBelow(10)) 
 */
 
+/* 
 const person = {
     name: "Kyle",
     friend: {
@@ -188,13 +192,11 @@ const person = {
 
 let currentPerson = person
 
-/* 
+ 
 while(currentPerson != null){
     console.log(currentPerson.name)
     currentPerson = currentPerson.friend
 } 
-*/
-
 
 function friendName(present){
 
@@ -204,4 +206,48 @@ function friendName(present){
     
 }
 
-friendName(person)
+friendName(person) 
+*/
+
+// Short Circuit Evaluation 
+
+// console.log(true || false)
+// if the first part is correct then the second part is ignored
+
+/* 
+printTrue() || printFalse()
+
+function printTrue(){
+    console.log("true")
+    return true
+}
+
+function printFalse(){
+    console.log("false")
+    return false
+} 
+*/
+
+function printName(name){
+
+    name = name || "Default"
+    /*     if(name == null){
+        name = "Default"
+    } */
+    
+    console.log(name)
+}
+
+printName()
+
+// Assigning default values
+
+const person = {
+    address: {
+        street: "main st"
+    }
+}
+
+console.log(person && person.address && person.address.street)
+
+// Checks if a property in an object exists
