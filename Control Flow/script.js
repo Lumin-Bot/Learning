@@ -227,13 +227,13 @@ function printFalse(){
     return false
 } 
 */
-
+/*
 function printName(name){
 
     name = name || "Default"
-    /*     if(name == null){
+        if(name == null){
         name = "Default"
-    } */
+    } 
     
     console.log(name)
 }
@@ -251,3 +251,6 @@ const person = {
 console.log(person && person.address && person.address.street)
 
 // Checks if a property in an object exists
+
+*/
+
