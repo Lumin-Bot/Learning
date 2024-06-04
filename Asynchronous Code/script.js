@@ -82,19 +82,19 @@
 //     console.log("clicked")
 // })
 
-Promise.all([
-    Promise.resolve("1"),
-    Promise.resolve("3"),
-    Promise.resolve("2")
-])
-// Promise.all([])
-// All have to resolve otherwise it will run reject on the very first one
+// Promise.all([
+//     Promise.resolve("1"),
+//     Promise.resolve("3"),
+//     Promise.resolve("2")
+// ])
+// // Promise.all([])
+// // All have to resolve otherwise it will run reject on the very first one
 
-// Successful Promise
-Promise.resolve("value").then(message => console.log(message))
+// // Successful Promise
+// Promise.resolve("value").then(message => console.log(message))
 
-// Failed Promise
-Promise.reject("value").catch(message => console.error(message))
+// // Failed Promise
+// Promise.reject("value").catch(message => console.error(message))
 
 // Promise.any([])
 // Very first promise that succeeds
@@ -104,3 +104,70 @@ Promise.reject("value").catch(message => console.error(message))
 
 // Promise.allSettled([])
 // Waits for all the promises to run then shows all statuses of each promise 
+
+
+function setTimeoutPromise(delay){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(`You waited ${delay} milliseconds`)
+        }, delay)
+    })
+}
+
+// setTimeoutPromise(250).then(() => {
+//     console.log("1")
+// })
+
+// async function doStuff(){
+//     try{
+//         const message = await setTimeoutPromise(250)
+//         console.log(message)
+//         console.log("1")
+//         const message2 = await setTimeoutPromise(250)
+//         console.log(message2)
+//         console.log("2")
+//     } catch(error){
+//         console.error("Error")
+//     }
+
+// }
+
+// doStuff()
+
+
+
+function getValueWithDelay(value, delay){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(value)
+        }, delay)
+    })
+}
+
+function getValueWithDelayError(value, delay){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("Error")
+        }, delay)
+    })
+}
+
+// Call getValueWithDelay twice and print out the returned value
+// Then call getValueWithDelayError and make sure that the error is properly caught
+
+async function doProblem(){
+    try{
+        const message = await getValueWithDelay(10, 250)
+        console.log(message)
+        const message2 = await getValueWithDelay(20, 250)
+        console.log(message2)
+        const message3 = await getValueWithDelayError(30, 250)
+        console.log(message3)
+    } catch{
+        console.error("Oops")
+    }
+
+}
+
+
+doProblem()
