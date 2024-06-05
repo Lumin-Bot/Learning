@@ -35,7 +35,6 @@ async function doStuff(){
 
 }
 
-
 button.addEventListener("click", doStuff)
 
 // Send Data to the Server
@@ -49,8 +48,13 @@ async function doStuffs(){
             title: "New Post"
         })
     })
-    const post = await response.json
+    const post = await response.json()
     console.log(post)
 }
 
 doStuffs()
+
+
+fetch("https://jsonplaceholder.typicode.com/comments?postId=1").then(response => response.json()).then(comments => {
+    console.log(comments)
+})
