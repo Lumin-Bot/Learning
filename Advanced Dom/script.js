@@ -1,5 +1,5 @@
 const URL = "https://jsonplaceholder.typicode.com/posts/"
-const button = document.querySelector("button")
+// const button = document.querySelector("button")
 
 // Get Data from the Server
 // fetch(URL).then(response =>{
@@ -60,19 +60,66 @@ const button = document.querySelector("button")
 // })
 
 // Event Loop
-function test(){
-    console.log("hi 1")
-    console.log("hi 2")
-    new Promise((resolve, reject) => {
-        resolve("hi promise")
-    }).then(message => console.log(message))
-    setTimeout(() => console.log("hi 3"), 10)
-    setTimeout(() => console.log("hi 4"), 0)
-    console.log("hi 5")
-}
+// function test(){
+//     console.log("hi 1")
+//     console.log("hi 2")
+//     new Promise((resolve, reject) => {
+//         resolve("hi promise")
+//     }).then(message => console.log(message))
+//     setTimeout(() => console.log("hi 3"), 10)
+//     setTimeout(() => console.log("hi 4"), 0)
+//     console.log("hi 5")
+// }
 
-// setTimeOut runs after the entire call stack
-// Promise runs after the function is completed
-test()
+// // setTimeOut runs after the entire call stack
+// // Promise runs after the function is completed
+// test()
 
-console.log("hi 6")
+// console.log("hi 6")
+
+// Event Delegation 
+
+const buttons = document.querySelectorAll("button")
+
+// document.addEventListener("click", ()=> {
+//     console.log("Clicked Document")
+// })
+
+// document.body.addEventListener("click", ()=> {
+//     console.log("Clicked Body")
+// })
+
+// buttons.forEach(button => {
+//     button.addEventListener("click", e => {
+//         console.log("Clicked Button")
+//         e.stopPropagation()
+//     })
+// })
+
+// Capturing: Furthest to Closest / Outside to Inside
+// Example: Document to Body to Button  
+// Bubbling: Closest to Furthest / Inside to Outside
+// Example: Button to Body to Document
+
+
+// buttons.forEach(button => {
+//     button.addEventListener("click", () => {
+//         console.log("clicked Button")
+//     })
+// })
+
+document.addEventListener("click", e =>{
+    if(e.target.matches("button")){
+        console.log("clicked Button")
+    }
+    console.log(e.target)
+})
+
+const newButton = document.createElement("button")
+newButton.innerText = "Button 5"
+document.body.append(newButton)
+
+
+// newButton.addEventListener("click", ()=>{
+//     console.log("clicked Button")
+// })
