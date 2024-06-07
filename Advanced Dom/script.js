@@ -79,7 +79,7 @@ const URL = "https://jsonplaceholder.typicode.com/posts/"
 
 // Event Delegation 
 
-const buttons = document.querySelectorAll("button")
+// const buttons = document.querySelectorAll("button")
 
 // document.addEventListener("click", ()=> {
 //     console.log("Clicked Document")
@@ -108,18 +108,46 @@ const buttons = document.querySelectorAll("button")
 //     })
 // })
 
-document.addEventListener("click", e =>{
-    if(e.target.matches("button")){
-        console.log("clicked Button")
-    }
-    console.log(e.target)
-})
+// document.addEventListener("click", e =>{
+//     if(e.target.matches("button")){
+//         console.log("clicked Button")
+//     }
+//     console.log(e.target)
+// })
 
-const newButton = document.createElement("button")
-newButton.innerText = "Button 5"
-document.body.append(newButton)
+// const newButton = document.createElement("button")
+// newButton.innerText = "Button 5"
+// document.body.append(newButton)
 
 
 // newButton.addEventListener("click", ()=>{
 //     console.log("clicked Button")
 // })
+
+
+// Browser Storage 
+// Local Storage | Cookies            | Session Storage
+// 10 MB         | 4KB                | 5MB
+// Never Expire  | Manual Expiration  | Expire on tab close
+// Cilent        | Cilent/Server      | Cilent
+// Easy          | Hard               | Easy
+
+localStorage.setItem("Name", "Jacky")
+sessionStorage.setItem("Age", "23")
+// Update Names 
+localStorage.setItem("Name", "Kyle")
+sessionStorage.setItem("Age", "24")
+
+// localStorage.removeItem("Name")
+
+console.log(localStorage.getItem("Name"))
+
+// Januray 1st
+const date = new Date(9999, 0 , 1).toUTCString()
+const pastDate = new Date(1999, 0, 1).toUTCString()
+
+document.cookie = `name=Jacky; expires=${date}`
+document.cookie = `age=25; expires=${date}`
+console.log(document.cookie)
+document.cookie = `name=; expires=${pastDate}`
+console.log(document.cookie)
