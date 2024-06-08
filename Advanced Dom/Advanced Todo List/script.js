@@ -8,13 +8,18 @@ const TODOS_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-todos`
 const todos = loadTodos()
 todos.forEach(renderToDo)
 
+// Complete Todos
 list.addEventListener("change", e =>{
     if(!e.target.matches("[data-list-item-checkbox]")) return
     
     // Get that todo that is clicked on 
+    const parent = e.target.closest(".list-item")
+    const todoId = parent.dataset.todoId
+    const todo = todos.find(t => t.id === todoId)
+    todo.complete = e.target.checked
     // Toggle the complete property to be equal to the checkbox value
     // Save updated todo
-
+    saveTodos()
 })  
 
 // Add Todos
@@ -47,6 +52,8 @@ function renderToDo(todo){
     listItem.dataset.todoId = todo.id
     const textElement = templateClone.querySelector("[data-list-item-text]")
     textElement.innerText = todo.name
+    const checkbox = templateClone.querySelector("[data-list-item-checkbox]")
+    checkbox.checked = todo.complete
     list.appendChild(templateClone)
 }
 
@@ -63,6 +70,6 @@ function loadTodos(){
 }
 
 // Delete Todos
-// Complete Todos
+
 
 
