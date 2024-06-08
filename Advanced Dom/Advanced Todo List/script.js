@@ -6,8 +6,16 @@ const template = document.querySelector("#list-item-template")
 const LOCAL_STORAGE_PREFIX = "ADVANCED_TODO_LIST-"
 const TODOS_STORAGE_KEY = `${LOCAL_STORAGE_PREFIX}-todos`
 const todos = loadTodos()
-
 todos.forEach(renderToDo)
+
+list.addEventListener("change", e =>{
+    if(!e.target.matches("[data-list-item-checkbox]")) return
+    
+    // Get that todo that is clicked on 
+    // Toggle the complete property to be equal to the checkbox value
+    // Save updated todo
+
+})  
 
 // Add Todos
 // User will type in todo and click add todo button. 
@@ -16,13 +24,12 @@ form.addEventListener("submit", e =>{
 
     const todoName = input.value
     
-    if(todoName === ""){
-        return
-    }
+    if(todoName === "") return
 
     const newTodo = {
         name: todoName,
-        complete: false
+        complete: false,
+        id: new Date().valueOf().toString()
     }
 
     todos.push(newTodo)
@@ -36,6 +43,8 @@ form.addEventListener("submit", e =>{
 // This should then add the todo to your list above. 
 function renderToDo(todo){
     const templateClone = template.content.cloneNode(true)
+    const listItem = templateClone.querySelector(".list-item")
+    listItem.dataset.todoId = todo.id
     const textElement = templateClone.querySelector("[data-list-item-text]")
     textElement.innerText = todo.name
     list.appendChild(templateClone)
