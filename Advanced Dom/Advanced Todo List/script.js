@@ -10,9 +10,7 @@ const todos = loadTodos()
 todos.forEach(renderToDo)
 
 // Add Todos
-
 // User will type in todo and click add todo button. 
-
 form.addEventListener("submit", e =>{
     e.preventDefault()
 
@@ -21,9 +19,14 @@ form.addEventListener("submit", e =>{
     if(todoName === ""){
         return
     }
-    todos.push(todoName)
-    // Render todo
-    renderToDo(todoName)
+
+    const newTodo = {
+        name: todoName,
+        complete: false
+    }
+
+    todos.push(newTodo)
+    renderToDo(newTodo)
     saveTodos()
     input.value = ""
 
@@ -31,29 +34,24 @@ form.addEventListener("submit", e =>{
 })
 
 // This should then add the todo to your list above. 
-
-function renderToDo(todoName){
+function renderToDo(todo){
     const templateClone = template.content.cloneNode(true)
     const textElement = templateClone.querySelector("[data-list-item-text]")
-    textElement.innerText = todoName
+    textElement.innerText = todo.name
     list.appendChild(templateClone)
 }
 
 // Save Todos
-
 function saveTodos(){
     localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(todos))
 
 }
 
 // Load Todos
-
 function loadTodos(){
     const todosString = localStorage.getItem(TODOS_STORAGE_KEY)
     return JSON.parse(todosString) || []
 }
-
-
 
 // Delete Todos
 // Complete Todos
