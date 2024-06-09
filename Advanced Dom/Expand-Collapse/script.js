@@ -1,18 +1,13 @@
-const buttons = document.querySelectorAll(".expand-button")
-
-buttons.forEach(button => button.addEventListener("click", () => {
-    const cardBody = button.closest(".card-header").parentElement.children[1]
-    if(button.innerHTML === "Expand"){
-        cardBody.classList.add("show")
-        button.innerHTML = "Collapse"
-        return
+document.addEventListener("click", e => {
+    if (!e.target.matches(".expand-button")) return
+  
+    const card = e.target.closest(".card")
+    const cardBody = card.querySelector(".card-body")
+  
+    cardBody.classList.toggle("show")
+    if (e.target.innerText === "Expand") {
+      e.target.innerText = "Collapse"
+    } else {
+      e.target.innerText = "Expand"
     }
-    if(button.innerHTML === "Collapse"){
-        cardBody.classList.remove("show")
-        button.innerHTML = "Expand"
-        return
-    }
-    
-}))
-
-
+})
