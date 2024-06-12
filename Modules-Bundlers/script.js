@@ -1,7 +1,14 @@
-import printUser,  {me as jacky, kyle} from "./test.js"
+// import printUser,  {me as jacky, kyle} from "./test.js"
 
 
-console.log(jacky)
-console.log(kyle)
+// console.log(jacky)
+// console.log(kyle)
 
-printUser(jacky)
+// printUser(jacky)
+
+const userExport = require("./test.js")
+const me = userExport.me
+const kyle = userExport.kyle
+const printUser = userExport.printUser
+
+console.log(me, kyle)
